@@ -5,7 +5,6 @@ A custom keyboard (dialog) for emoticons for android chatting application.
 
 *It uses :*
 - Dialog box for keyboard
-- Viewpager and gridview for drawer
 - spannable strings for showing emoticons
 
 Usage
@@ -21,8 +20,7 @@ ScreenShots
 
 ![Screenshot 2](/s2.png "")
 
-
-![Screenshot 3](/s3.png "")
+fork oh Chirag Jain project @ https://github.com/chiragjain/Emoticons-Keyboard
 
 Copyright (c) 2013 Chirag Jain
 
