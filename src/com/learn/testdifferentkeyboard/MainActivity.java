@@ -27,6 +27,7 @@ import android.view.ViewGroup.LayoutParams;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -254,23 +255,33 @@ public class MainActivity extends FragmentActivity implements KeyClickListener {
 	 */
 	private void enablePopUpView() {
 
-		ViewPager pager = (ViewPager) popUpView.findViewById(R.id.emoticons_pager);
-		pager.setOffscreenPageLimit(3);
+
 		
 		ArrayList<String> paths = new ArrayList<String>();
 
 		for (short i = 1; i <= NO_OF_EMOTICONS; i++) {			
 			paths.add(i + ".png");
+
+
 		}
 
-		EmoticonsPagerAdapter adapter = new EmoticonsPagerAdapter(MainActivity.this, paths, this);
-		pager.setAdapter(adapter);
+        ArrayList<String> emoticonsInAPage = new ArrayList<String>();
+
+        for (int i = 0; i < NO_OF_EMOTICONS; i++) {
+            emoticonsInAPage.add(paths.get(i));
+        }
+
+        GridView grid = (GridView) popUpView.findViewById(R.id.emoticons_grid);
+        EmoticonsGridAdapter adapter = new EmoticonsGridAdapter(
+                this, emoticonsInAPage,
+                this);
+        grid.setAdapter(adapter);
 
 		// Creating a pop window for emoticons keyboard
 		popupWindow = new PopupWindow(popUpView, LayoutParams.MATCH_PARENT,
 				(int) keyboardHeight, false);
 		
-		TextView backSpace = (TextView) popUpView.findViewById(R.id.back);
+		/*TextView backSpace = (TextView) popUpView.findViewById(R.id.back);
 		backSpace.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -278,7 +289,7 @@ public class MainActivity extends FragmentActivity implements KeyClickListener {
 				KeyEvent event = new KeyEvent(0, 0, 0, KeyEvent.KEYCODE_DEL, 0, 0, 0, 0, KeyEvent.KEYCODE_ENDCALL);
 				content.dispatchKeyEvent(event);	
 			}
-		});
+		});*/
 
 		popupWindow.setOnDismissListener(new OnDismissListener() {
 

@@ -17,15 +17,15 @@ import android.widget.ImageView;
 public class EmoticonsGridAdapter extends BaseAdapter{
 	
 	private ArrayList<String> paths;
-	private int pageNumber;
+	private int pageNumber = 1;
 	Context mContext;
 	
 	KeyClickListener mListener;
 	
-	public EmoticonsGridAdapter(Context context, ArrayList<String> paths, int pageNumber, KeyClickListener listener) {
+	public EmoticonsGridAdapter(Context context, ArrayList<String> paths, KeyClickListener listener) {
 		this.mContext = context;
 		this.paths = paths;
-		this.pageNumber = pageNumber;
+
 		this.mListener = listener;
 	}
 	public View getView(int position, View convertView, ViewGroup parent){

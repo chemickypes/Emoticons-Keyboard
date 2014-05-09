@@ -10,7 +10,8 @@
         android:id="@+id/emoticons_grid"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:horizontalSpacing="4dp"        
+        android:padding="2dp"
+        android:horizontalSpacing="2dp"
         android:numColumns="5"
         android:verticalSpacing="8dp" />
 
