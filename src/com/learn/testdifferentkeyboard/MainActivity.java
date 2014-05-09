@@ -96,7 +96,7 @@ public class MainActivity extends FragmentActivity implements KeyClickListener {
 		changeKeyboardHeight((int) popUpheight);
 		
 		// Showing and Dismissing pop up on clicking emoticons button
-		ImageView emoticonsButton = (ImageView) findViewById(R.id.emoticons_button);
+		final ImageView emoticonsButton = (ImageView) findViewById(R.id.emoticons_button);
 		emoticonsButton.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -105,6 +105,7 @@ public class MainActivity extends FragmentActivity implements KeyClickListener {
 				if (!popupWindow.isShowing()) {
 
 					popupWindow.setHeight((int) (keyboardHeight));
+                    emoticonsButton.setImageResource(R.drawable.ic_hardware_keyboard);
 
 					if (isKeyBoardVisible) {
 						emoticonsCover.setVisibility(LinearLayout.GONE);
@@ -114,6 +115,7 @@ public class MainActivity extends FragmentActivity implements KeyClickListener {
 					popupWindow.showAtLocation(parentLayout, Gravity.BOTTOM, 0, 0);
 
 				} else {
+                    emoticonsButton.setImageResource(R.drawable.ic_smiley);
 					popupWindow.dismiss();
 				}
 

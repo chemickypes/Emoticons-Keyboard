@@ -10,9 +10,9 @@
         android:id="@+id/emoticons_grid"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="2dp"
+        android:padding="6dp"
         android:horizontalSpacing="2dp"
-        android:numColumns="5"
-        android:verticalSpacing="8dp" />
+        android:numColumns="7"
+        android:verticalSpacing="2dp" />
 
 </LinearLayout>
